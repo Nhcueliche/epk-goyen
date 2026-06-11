@@ -1,7 +1,7 @@
 // GOYEN · EPK — carga content.json y rellena el DOM.
 // Regla: campo vacío o "[FALTA]" => el elemento/sección se oculta.
 
-const WEB3FORMS_ACCESS_KEY = '[FALTA]'; // REEMPLAZAR: access key gratis en web3forms.com
+const WEB3FORMS_ACCESS_KEY = 'a2c68a87-e638-4d44-8227-a31bcf6722cf'; // access key de web3forms.com (envía a sebastian.bartaburu@gmail.com)
 
 const $ = (sel) => document.querySelector(sel);
 

@@ -165,9 +165,6 @@ Datos que faltan (`[FALTA]` en `content.json`) — **no inventar, confirmar con 
 
 Configuración:
 
-- [ ] **Access key de Web3Forms** — crearla gratis en [web3forms.com](https://web3forms.com)
-      con el email de booking y pegarla en la constante `WEB3FORMS_ACCESS_KEY` al inicio de
-      `js/main.js` (hasta entonces el formulario muestra un aviso y no envía)
 - [ ] **PDF del presskit 2026** — reemplazar `assets/presskit-goyen.pdf` (hoy es el de 2025)
 - [ ] **URLs absolutas del `<head>`** — si el dominio final no es `goyen.pages.dev`,
       actualizar `canonical`, `og:url`, `og:image` y `twitter:image` en `index.html`
