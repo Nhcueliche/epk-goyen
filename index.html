@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO hardcodeado: los crawlers de previews no ejecutan JS -->
+  <title>GOYEN — EPK · Hard / Industrial Techno · Buenos Aires</title>
+  <meta name="description" content="Presskit electrónico de GOYEN, DJ uruguayo radicado en Buenos Aires. Sets de Hard e Industrial Techno sin bajadas, con energía ascendente sostenida. Bio, sets, fotos, rider técnico y booking.">
+  <link rel="canonical" href="https://goyen.pages.dev/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="GOYEN">
+  <meta property="og:title" content="GOYEN — EPK · Hard / Industrial Techno">
+  <meta property="og:description" content="DJ uruguayo radicado en Buenos Aires. Sets de Hard e Industrial Techno sin bajadas. Bio, sets, fotos, rider y booking.">
+  <meta property="og:url" content="https://goyen.pages.dev/">
+  <meta property="og:image" content="https://goyen.pages.dev/assets/img/og-goyen.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GOYEN — Hard Techno / Industrial — Buenos Aires, AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GOYEN — EPK · Hard / Industrial Techno">
+  <meta name="twitter:description" content="DJ uruguayo radicado en Buenos Aires. Sets de Hard e Industrial Techno sin bajadas.">
+  <meta name="twitter:image" content="https://goyen.pages.dev/assets/img/og-goyen.jpg">
+
+  <meta name="theme-color" content="#010108">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+
+  <!-- Tipografías: Archivo (body), Archivo Black (display), Space Mono (datos técnicos).
+       Self-hosteadas (woff2 del design system) con font-display: swap — ver decisión en README. -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-black-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/archivo-400.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-mono-400.woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header>
+    <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+      <a class="nav-wordmark" href="#top" aria-label="GOYEN — inicio">GOYEN</a>
+      <div class="nav-links">
+        <a href="#bio">Bio</a>
+        <a href="#musica" data-section-link="musica">Música</a>
+        <a href="#fotos" data-section-link="fotos">Fotos</a>
+        <a href="#trayectoria" data-section-link="trayectoria">Trayectoria</a>
+        <a href="#rider">Rider</a>
+        <a href="#booking">Booking</a>
+      </div>
+      <a class="gy-btn gy-btn--primary gy-btn--sm" href="#booking">Booking</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1 · HERO -->
+    <section class="hero" id="top" aria-label="GOYEN — presentación">
+      <div class="hero-photo gy-duotone">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/img/goyen-hero-800.webp 800w, assets/img/goyen-hero-1280.webp 1280w, assets/img/goyen-hero-2000.webp 2000w"
+                  sizes="100vw">
+          <img src="assets/img/goyen-hero-1280.jpg" alt="GOYEN, retrato de prensa sobre fondo negro"
+               fetchpriority="high" decoding="async" width="2000" height="1333">
+        </picture>
+      </div>
+      <div class="gy-scanlines" aria-hidden="true"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="gy-data-band hero-band" id="hero-band">HARD TECHNO / INDUSTRIAL · BUENOS AIRES, AR</p>
+        <h1 class="gy-glitch gy-glitch--live" data-text="GOYEN">GOYEN</h1>
+        <p class="hero-tagline" id="hero-tagline"></p>
+        <div class="hero-cta">
+          <a class="gy-btn gy-btn--primary gy-btn--lg" href="#booking">Booking</a>
+          <a class="gy-btn gy-btn--secondary gy-btn--lg" href="#musica" id="hero-cta-sets" hidden>Escuchar sets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · BIO -->
+    <section class="section" id="bio" aria-label="Biografía">
+      <p class="gy-eyebrow"><span class="idx">01</span><span class="tick" aria-hidden="true"></span>Biografía</p>
+      <div class="bio-grid">
+        <h2 class="gy-glitch" data-text="SIN BAJADAS">SIN BAJADAS</h2>
+        <div class="bio-copy">
+          <p class="gy-prose" id="bio-corta"></p>
+          <div class="bio-more" id="bio-larga" hidden>
+            <p class="gy-prose gy-prose--muted" id="bio-larga-text"></p>
+          </div>
+          <button class="gy-btn gy-btn--secondary gy-btn--sm bio-toggle" id="bio-toggle"
+                  aria-expanded="false" aria-controls="bio-larga" hidden>Leer más</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · MÚSICA -->
+    <section class="section" id="musica" aria-label="Música — sets" hidden>
+      <p class="gy-eyebrow"><span class="idx">02</span><span class="tick" aria-hidden="true"></span>Música</p>
+      <h2 class="gy-glitch" data-text="ESCUCHAR">ESCUCHAR</h2>
+      <div class="sets-list" id="sets-list"></div>
+    </section>
+
+    <!-- 4 · FOTOS -->
+    <section class="section" id="fotos" aria-label="Fotos de prensa" hidden>
+      <p class="gy-eyebrow"><span class="idx">03</span><span class="tick" aria-hidden="true"></span>Fotos</p>
+      <h2 class="gy-glitch" data-text="PRENSA">PRENSA</h2>
+      <div class="photo-grid" id="photo-grid"></div>
+      <a class="gy-linkrow photos-pack" id="photos-pack" target="_blank" rel="noopener" hidden>
+        <span class="platform">Drive</span>
+        <span class="label">Pack completo en alta</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </section>
+
+    <!-- 5 · TRAYECTORIA -->
+    <section class="section" id="trayectoria" aria-label="Trayectoria" hidden>
+      <p class="gy-eyebrow"><span class="idx">04</span><span class="tick" aria-hidden="true"></span>Trayectoria</p>
+      <h2 class="gy-glitch" data-text="FECHAS">FECHAS</h2>
+      <ul class="timeline" id="timeline"></ul>
+    </section>
+
+    <!-- 6 · RIDER TÉCNICO -->
+    <section class="section" id="rider" aria-label="Rider técnico">
+      <p class="gy-eyebrow"><span class="idx">05</span><span class="tick" aria-hidden="true"></span>Rider técnico</p>
+      <h2 class="gy-glitch" data-text="RIDER">RIDER</h2>
+      <div class="rider-wrap">
+        <div class="gy-rider-panel gy-frame">
+          <h3 class="panel-title">Setup de cabina</h3>
+          <dl id="rider-rows"></dl>
+        </div>
+        <div class="rider-actions">
+          <a class="gy-btn gy-btn--secondary" id="presskit-btn" download hidden>Descargar presskit PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · BOOKING -->
+    <section class="section" id="booking" aria-label="Booking y contacto">
+      <p class="gy-eyebrow"><span class="idx">06</span><span class="tick" aria-hidden="true"></span>Contacto</p>
+      <div class="booking-grid">
+        <div class="booking-left">
+          <h2 class="gy-glitch" data-text="BOOKING">BOOKING</h2>
+          <p class="gy-prose gy-prose--muted" id="booking-disponibilidad" hidden></p>
+          <div class="booking-contacts">
+            <div class="gy-contactrow" id="contact-email-row" hidden>
+              <span class="label">Booking</span>
+              <a class="value" id="contact-email-link"></a>
+              <button class="gy-copy-btn" id="contact-email-copy" type="button">copiar</button>
+            </div>
+            <div class="gy-contactrow" id="contact-ig-row" hidden>
+              <span class="label">Instagram</span>
+              <a class="value" id="contact-ig-link" target="_blank" rel="noopener"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-panel gy-frame">
+          <form class="booking-form" id="booking-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label" for="f-nombre">Nombre *</label>
+                <input class="input" id="f-nombre" name="nombre" type="text" required
+                       autocomplete="name" placeholder="Tu nombre / venue">
+                <p class="field-error" id="err-nombre" hidden>Ingresá tu nombre.</p>
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-email">Email *</label>
+                <input class="input" id="f-email" name="email" type="email" required
+                       autocomplete="email" placeholder="vos@venue.com">
+                <p class="field-error" id="err-email" hidden>Ingresá un email válido.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label" for="f-fecha">Fecha tentativa</label>
+              <input class="input" id="f-fecha" name="fecha_tentativa" type="date">
+            </div>
+            <div class="field">
+              <label class="field-label" for="f-mensaje">Mensaje *</label>
+              <textarea class="input" id="f-mensaje" name="mensaje" rows="4" required
+                        placeholder="Contanos del evento: ciudad, venue, line-up…"></textarea>
+              <p class="field-error" id="err-mensaje" hidden>Contanos algo del evento.</p>
+            </div>
+            <!-- honeypot anti-spam de Web3Forms -->
+            <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" aria-hidden="true">
+            <button class="gy-btn gy-btn--primary" id="form-submit" type="submit">Enviar solicitud</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="form-done" id="form-done" hidden>
+            <p class="gy-data-band form-done-mark">SOLICITUD ENVIADA</p>
+            <p class="gy-prose">Gracias. Te respondemos a la brevedad con disponibilidad y rider.</p>
+            <button class="gy-btn gy-btn--secondary gy-btn--sm" id="form-reset" type="button">Nueva solicitud</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <noscript>
+    <p class="noscript-note">Este sitio necesita JavaScript para mostrar el contenido del presskit.</p>
+  </noscript>
+
+  <footer class="site-footer">
+    <span class="gy-data-band" id="footer-mark">GOYEN · 2026</span>
+    <span class="gy-data-band" id="footer-band"></span>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

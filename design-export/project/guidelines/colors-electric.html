@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Electric blue — the one accent" subtitle="One saturated discharge per page. Rest, hover, press + glow." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--ink-void); }
+  .wrap { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .sw { border-radius: var(--radius-sm); padding: 14px; min-height: 60px; display: flex; flex-direction: column; justify-content: space-between; }
+  .lab { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+  .hex { font-family: var(--font-mono); font-size: 12px; color: #fff; }
+  .glow { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); }
+  .dot { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-electric); box-shadow: var(--glow-electric); }
+  .glow span { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="sw" style="background:#170EFF"><span class="lab">rest · accent</span><span class="hex">#170EFF</span></div>
+    <div class="sw" style="background:#4a43ff"><span class="lab">hover</span><span class="hex">#4A43FF</span></div>
+    <div class="sw" style="background:#1109b0"><span class="lab">press</span><span class="hex">#1109B0</span></div>
+    <div class="glow"><div class="dot"></div><span>--glow-electric &nbsp;·&nbsp; 0 0 24px rgba(23,14,255,.55) — reserved for the single accent element</span></div>
+  </div>
+</body>
+</html>

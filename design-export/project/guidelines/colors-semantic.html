@@ -1,0 +1,42 @@
+<!-- @dsCard group="Colors" viewport="700x200" name="Semantic surfaces & text" subtitle="What to actually reach for — surface, text, border aliases" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--ink-void); font-family: var(--font-mono); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .panel { border-radius: var(--radius-sm); padding: 14px; border: 1px solid var(--border-hairline); }
+  .t { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+  .lab { font-size: 10px; color: var(--text-faint); margin-bottom: 8px; letter-spacing: .14em; }
+  .line { display: flex; gap: 8px; align-items: center; margin-top: 6px; }
+  .b { width: 22px; height: 22px; border-radius: 3px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="panel" style="background: var(--surface-base)">
+      <div class="lab">surface-base</div>
+      <div class="t" style="color: var(--text-primary)">text-primary FAFAFA</div>
+      <div class="t" style="color: var(--text-muted)">text-muted 62%</div>
+      <div class="t" style="color: var(--text-faint)">text-faint 34%</div>
+    </div>
+    <div class="panel" style="background: var(--surface-section)">
+      <div class="lab" style="color: rgba(255,255,255,.5)">surface-section</div>
+      <div class="t" style="color: var(--text-primary)">overlay on photo</div>
+      <div class="t" style="color: var(--accent)">accent link →</div>
+    </div>
+    <div class="panel" style="background: var(--surface-raised)">
+      <div class="lab">surface-raised (cards/inputs)</div>
+      <div class="line"><span class="b" style="background:var(--border-line)"></span><span class="t" style="color:var(--text-muted)">border-line</span></div>
+      <div class="line"><span class="b" style="background:var(--border-frame)"></span><span class="t" style="color:var(--text-muted)">border-frame</span></div>
+    </div>
+    <div class="panel" style="background: var(--surface-overlay)">
+      <div class="lab">surface-overlay 72% scrim</div>
+      <div class="t" style="color: var(--text-primary)">text always wins</div>
+      <div class="line"><span class="b" style="background:var(--border-strong)"></span><span class="t" style="color:var(--text-muted)">border-strong (focus)</span></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* ============================================================
+   GOYEN · Effects, shadows & signature motifs
+   The GLITCH is the project's visual law. It lives ONLY in
+   headlines and photo treatment — never in reading text,
+   never in the rider.
+   ============================================================ */
+
+:root {
+  /* ---- Shadows (dark-on-dark: glow up, depth down) ---- */
+  --shadow-none: none;
+  --shadow-panel: 0 1px 0 rgba(250,250,250,0.04) inset, 0 12px 40px rgba(0,0,0,0.6);
+  --shadow-card:  0 8px 32px rgba(0,0,0,0.55);
+  --shadow-pop:   0 20px 60px rgba(0,0,0,0.7);
+  --shadow-accent-glow: 0 0 0 1px rgba(23,14,255,0.4), 0 0 28px rgba(23,14,255,0.45);
+
+  /* ---- Glitch offsets ---- */
+  --glitch-offset: 0.06em;
+  --glitch-offset-lg: 3px;
+
+  /* ---- Motion ---- */
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur-med: 220ms; /* @kind other */
+  --dur-slow: 420ms; /* @kind other */
+
+  /* ---- Scanline texture (≤10% opacity over photography) ---- */
+  --scanline-size: 3px;
+  --scanline-color: rgba(174, 182, 255, 0.06);
+}
+
+/* ------------------------------------------------------------
+   GLITCH HEADLINE
+   Duplicated word, offset blue/cyan ghosts behind a clean
+   white face. Apply to display headlines + the GOYEN wordmark.
+   Markup: <span class="gy-glitch" data-text="BIOGRAFIA">BIOGRAFIA</span>
+   ------------------------------------------------------------ */
+.gy-glitch {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-tight);
+  text-transform: uppercase;
+  isolation: isolate;
+}
+.gy-glitch::before,
+.gy-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.gy-glitch::before {
+  color: var(--glitch-a);
+  transform: translate(calc(-1 * var(--glitch-offset-lg)), 1px);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+.gy-glitch::after {
+  color: var(--glitch-b);
+  transform: translate(var(--glitch-offset-lg), -1px);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+
+/* Animated variant — gate behind reduced-motion + an active flag */
+@media (prefers-reduced-motion: no-preference) {
+  .gy-glitch--live::before { animation: gy-glitch-x 3.6s steps(1) infinite; }
+  .gy-glitch--live::after  { animation: gy-glitch-x 3.6s steps(1) infinite reverse; }
+}
+@keyframes gy-glitch-x {
+  0%, 92%, 100% { transform: translate(calc(-1 * var(--glitch-offset-lg)), 1px); }
+  93% { transform: translate(-6px, -2px); }
+  95% { transform: translate(4px, 2px); }
+  97% { transform: translate(-2px, 1px); }
+}
+
+/* ------------------------------------------------------------
+   SCANLINES — unify mixed photo sources. Place as an overlay.
+   <div class="gy-scanlines"></div> absolutely over a photo.
+   ------------------------------------------------------------ */
+.gy-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--scanline-size) - 1px),
+    var(--scanline-color) var(--scanline-size)
+  );
+  mix-blend-mode: screen;
+}
+
+/* ------------------------------------------------------------
+   PHOTO DUOTONE OVERLAY — blue scrim so text always wins.
+   Wrap a photo, add this as a sibling overlay layer.
+   ------------------------------------------------------------ */
+.gy-photo-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(1,1,8,0.35) 0%,
+    rgba(8,5,87,0.45) 55%,
+    rgba(1,1,8,0.88) 100%
+  );
+}
+
+/* Hairline technical frame (the thin bracket around cover art) */
+.gy-frame {
+  border: var(--border-thin) solid var(--border-frame);
+  box-shadow: 0 0 0 1px rgba(1,1,8,0.6) inset;
+}

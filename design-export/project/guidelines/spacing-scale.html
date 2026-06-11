@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Spacing scale" subtitle="8px base grid — 4 → 128" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--ink-void); }
+  .row { display: flex; align-items: flex-end; gap: 14px; }
+  .item { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  .bar { background: var(--blue-electric); height: 16px; border-radius: 1px; }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="bar" style="width:4px"></div><span class="lab">1·4</span></div>
+    <div class="item"><div class="bar" style="width:8px"></div><span class="lab">2·8</span></div>
+    <div class="item"><div class="bar" style="width:12px"></div><span class="lab">3·12</span></div>
+    <div class="item"><div class="bar" style="width:16px"></div><span class="lab">4·16</span></div>
+    <div class="item"><div class="bar" style="width:24px"></div><span class="lab">5·24</span></div>
+    <div class="item"><div class="bar" style="width:32px"></div><span class="lab">6·32</span></div>
+    <div class="item"><div class="bar" style="width:48px"></div><span class="lab">7·48</span></div>
+    <div class="item"><div class="bar" style="width:64px"></div><span class="lab">8·64</span></div>
+    <div class="item"><div class="bar" style="width:96px"></div><span class="lab">9·96</span></div>
+    <div class="item"><div class="bar" style="width:128px"></div><span class="lab">10·128</span></div>
+  </div>
+</body>
+</html>

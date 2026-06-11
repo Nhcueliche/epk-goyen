@@ -1,0 +1,33 @@
+<!-- @dsCard group="Brand" viewport="700x300" name="Text over photography" subtitle="Photo dominates OR text dominates — never compete. Scrim guarantees legibility." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 16px; background: var(--ink-void); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stage { position: relative; aspect-ratio: 3/2; border-radius: var(--radius-sm); overflow: hidden; }
+  .stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .content { position: relative; z-index: 4; height: 100%; padding: 16px; display: flex; flex-direction: column; justify-content: flex-end; }
+  .ti { font-family: var(--font-display); text-transform: uppercase; color: #fff; font-size: 30px; line-height: .92; }
+  .band { font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; color: var(--blue-haze); text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <img src="../assets/photos/goyen-live.jpeg" alt="">
+    <div class="gy-scanlines" style="z-index:2"></div>
+    <div class="content">
+      <span class="gy-glitch" data-text="GOYEN" style="font-size:34px">GOYEN</span>
+    </div>
+  </div>
+  <div class="stage">
+    <img src="../assets/photos/goyen-portrait-duotone.jpeg" alt="">
+    <div class="gy-photo-scrim" style="z-index:2"></div>
+    <div class="content">
+      <span class="band">HARD TECHNO / INDUSTRIAL</span>
+      <span class="ti">Energía<br>sin pausa</span>
+    </div>
+  </div>
+</body>
+</html>

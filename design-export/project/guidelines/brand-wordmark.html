@@ -1,0 +1,28 @@
+<!-- @dsCard group="Brand" viewport="700x240" name="Wordmark" subtitle="GOYEN — clean for small use, glitch for cover. White & electric." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--ink-void); display: grid; grid-template-columns: 1fr 1fr; }
+  .cell { padding: 26px; display: flex; flex-direction: column; gap: 18px; align-items: center; justify-content: center; }
+  .cell + .cell { border-left: 1px solid var(--border-hairline); }
+  .mark { font-family: var(--font-display); font-size: 46px; text-transform: uppercase; letter-spacing: var(--tracking-display); line-height: 1; }
+  .white { color: var(--white); }
+  .electric { color: var(--blue-electric); }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); letter-spacing: .14em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="cell">
+    <span class="gy-glitch" data-text="GOYEN" style="font-size:46px">GOYEN</span>
+    <span class="lab">glitch · cover use</span>
+  </div>
+  <div class="cell">
+    <span class="mark white">GOYEN</span>
+    <span class="mark electric">GOYEN</span>
+    <span class="lab">clean · white &amp; electric · small use / flyers</span>
+  </div>
+</body>
+</html>

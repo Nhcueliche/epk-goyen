@@ -1,0 +1,60 @@
+/* ============================================================
+   GOYEN · Base / element defaults
+   Imported last so tokens resolve. Dark-first global ground.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--surface-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--blue-electric);
+  color: var(--white);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Eyebrow / kicker label — wide-tracked mono, used above titles */
+.gy-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-small);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* The technical data band: HARD TECHNO / INDUSTRIAL · BPM · CITY */
+.gy-data-band {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-small);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Reading paragraph helper — never uppercase, comfortable measure */
+.gy-prose {
+  font-family: var(--font-body);
+  font-size: var(--type-body);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+.gy-prose--muted { color: var(--text-muted); }

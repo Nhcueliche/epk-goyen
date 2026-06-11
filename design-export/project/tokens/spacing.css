@@ -1,0 +1,42 @@
+/* ============================================================
+   GOYEN · Spacing & layout tokens
+   8px base grid. Generous negative space — "el resto respira
+   en oscuridad". A4 page geometry for the printed presskit.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (8px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;  /*  4 */
+  --space-2: 0.5rem;   /*  8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.5rem;   /* 24 */
+  --space-6: 2rem;     /* 32 */
+  --space-7: 3rem;     /* 48 */
+  --space-8: 4rem;     /* 64 */
+  --space-9: 6rem;     /* 96 */
+  --space-10: 8rem;    /* 128 */
+
+  /* ---- Radii — brutalist: mostly square, hairline rounding only ---- */
+  --radius-none: 0;
+  --radius-xs: 2px;     /* default for inputs / chips */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-pill: 999px; /* used sparingly — tags only */
+
+  /* ---- Border widths ---- */
+  --border-thin: 1px;
+  --border-med:  2px;
+  --border-thick: 3px;
+
+  /* ---- A4 print geometry (vertical) ---- */
+  --page-w: 210mm; /* @kind other */
+  --page-h: 297mm; /* @kind other */
+  --page-margin: 16mm;
+
+  /* ---- Web layout ---- */
+  --container-max: 1200px;
+  --container-pad: clamp(1.25rem, 5vw, 4rem);
+  --section-gap: clamp(4rem, 10vw, 8rem);
+}

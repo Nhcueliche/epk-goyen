@@ -1,0 +1,54 @@
+{
+  "identidad": {
+    "tagline": "Energía sin pausa. Hard Techno que no baja nunca.",
+    "generos": "HARD TECHNO / INDUSTRIAL",
+    "bpm": "[FALTA]",
+    "ciudad": "BUENOS AIRES, AR"
+  },
+  "bio": {
+    "corta": "GOYEN es un DJ uruguayo radicado en Buenos Aires. Su sello: sets de Hard e Industrial Techno con influencias de PsyTrance, construidos sin bajadas, con energía ascendente sostenida. Cofundador de BES, productora que conecta la escena under con artistas consolidados del Hard Techno nacional. Compartió cabina con Clipper Stealer, Bronkka, Schavartzman, Ruthless, Drem, Eduvek, Korrosiv y Kleck.er, entre otros.",
+    "larga": "[FALTA]"
+  },
+  "sets": [
+    {
+      "titulo": "",
+      "plataforma": "soundcloud",
+      "url": "https://soundcloud.com/sebass-goyen/hard-hard-set-grabado"
+    },
+    {
+      "titulo": "",
+      "plataforma": "youtube",
+      "url": "https://www.youtube.com/watch?v=mBuZgPcVb2I"
+    }
+  ],
+  "fotos": [
+    {
+      "src": "assets/img/foto-01-1600.webp",
+      "srcset": "assets/img/foto-01-480.webp 480w, assets/img/foto-01-960.webp 960w, assets/img/foto-01-1600.webp 1600w",
+      "fallback": "assets/img/foto-01-960.jpg",
+      "alt": "GOYEN, retrato de prensa sobre fondo negro"
+    },
+    {
+      "src": "assets/img/foto-02-960.webp",
+      "srcset": "assets/img/foto-02-480.webp 480w, assets/img/foto-02-960.webp 960w",
+      "fallback": "assets/img/foto-02-960.jpg",
+      "alt": "GOYEN en cabina durante un set en vivo"
+    }
+  ],
+  "drive_fotos_url": "https://drive.google.com/drive/folders/1_kZMFqOweay312NqDi4oThg5vFpqMwFE?usp=drive_link",
+  "trayectoria": [
+    { "fecha": "", "evento": "", "venue": "", "ciudad": "" }
+  ],
+  "rider": {
+    "mixer": "Allen & Heath Xone:92/96 o Pioneer DJM-900NXS2",
+    "players": "3x Pioneer CDJ-2000NXS2 / CDJ-3000",
+    "formato": "USB / Rekordbox",
+    "monitoreo": "Estéreo en cabina, control desde mixer"
+  },
+  "contacto": {
+    "email": "sebastian.bartaburu@gmail.com",
+    "instagram": "@sebass_goyen",
+    "disponibilidad": "[FALTA]"
+  },
+  "presskit_pdf": "assets/presskit-goyen.pdf"
+}

@@ -1,0 +1,22 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Radii & borders" subtitle="Brutalist — mostly square. Hairline frames, blue lines." -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--ink-void); display: flex; gap: 28px; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .box { width: 80px; height: 56px; background: var(--surface-raised); }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+  <div class="item"><div class="box" style="border-radius:0"></div><span class="lab">none · 0</span></div>
+  <div class="item"><div class="box" style="border-radius:2px"></div><span class="lab">xs · 2 (default)</span></div>
+  <div class="item"><div class="box" style="border-radius:4px"></div><span class="lab">sm · 4</span></div>
+  <div class="item"><div class="box" style="border:1px solid var(--border-hairline)"></div><span class="lab">hairline</span></div>
+  <div class="item"><div class="box" style="border:1px solid var(--border-frame)"></div><span class="lab">frame</span></div>
+  <div class="item"><div class="box" style="border:2px solid var(--border-strong)"></div><span class="lab">strong (focus)</span></div>
+</body>
+</html>

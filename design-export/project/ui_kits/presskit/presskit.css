@@ -1,0 +1,122 @@
+/* ============================================================
+   GOYEN · Presskit (A4 paginated) — kit-local layout CSS
+   Three A4 pages. Screen = stacked dark pages; print = one per sheet.
+   ============================================================ */
+
+.pk-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-7);
+  padding: var(--space-8) var(--space-5);
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(23,14,255,0.10), transparent 60%),
+    var(--ink-void);
+  min-height: 100vh;
+}
+
+.pk-page {
+  position: relative;
+  width: var(--page-w);
+  min-height: var(--page-h);
+  background: var(--ink-void);
+  overflow: hidden;
+  box-shadow: var(--shadow-pop);
+  border: 1px solid var(--border-hairline);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Page 1 · Cover ---------- */
+.pk-cover { color: var(--white); }
+.pk-cover-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 28%; z-index: 0;
+}
+.pk-cover-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg,
+    rgba(1,1,8,0.55) 0%, rgba(1,1,8,0.20) 32%,
+    rgba(8,5,87,0.40) 64%, rgba(1,1,8,0.92) 100%);
+}
+.pk-cover-top, .pk-cover-body, .pk-cover-foot { position: relative; z-index: 3; }
+.pk-cover-top {
+  display: flex; justify-content: space-between;
+  padding: var(--page-margin) var(--page-margin) 0;
+  color: var(--blue-haze);
+}
+.pk-cover-body {
+  margin-top: auto;
+  padding: 0 var(--page-margin) var(--space-6);
+  display: flex; flex-direction: column; gap: var(--space-4);
+}
+.pk-cover-band { color: var(--blue-haze); }
+.pk-cover .gy-glitch { font-size: clamp(5rem, 18vw, 9rem); }
+.pk-cover-phrase {
+  font-family: var(--font-body); font-size: var(--type-lead);
+  line-height: 1.4; max-width: 30ch; margin: 0;
+  color: var(--text-primary); text-wrap: pretty;
+}
+.pk-cover-tags { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-2); }
+.pk-cover-foot {
+  display: flex; justify-content: space-between;
+  padding: var(--space-5) var(--page-margin) var(--page-margin);
+  border-top: 1px solid var(--border-hairline);
+  color: var(--text-muted);
+}
+
+/* ---------- Shared page header ---------- */
+.pk-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--page-margin) var(--page-margin) var(--space-6);
+  border-bottom: 1px solid var(--border-hairline);
+}
+.pk-head-meta { color: var(--text-faint); }
+
+/* ---------- Page 2 · Bio ---------- */
+.pk-bio-grid {
+  flex: 1; display: grid; grid-template-columns: 1.25fr 0.85fr;
+  gap: var(--space-7); padding: var(--space-7) var(--page-margin) var(--page-margin);
+}
+.pk-bio-text { display: flex; flex-direction: column; gap: var(--space-5); }
+.pk-bio-text .gy-glitch { font-size: clamp(2.5rem, 6vw, 3.75rem); }
+.pk-bio-shared { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-2); }
+.pk-bio-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.pk-bio-photo {
+  position: relative; align-self: stretch; min-height: 360px;
+  overflow: hidden; border-radius: var(--radius-xs);
+}
+.pk-bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.pk-bio-photo figcaption {
+  position: absolute; left: var(--space-4); bottom: var(--space-4); z-index: 4;
+  color: var(--blue-haze);
+}
+
+/* ---------- Page 3 · Rider + Contacto ---------- */
+.pk-contact-grid {
+  flex: 1; display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-7); padding: var(--space-7) var(--page-margin) var(--space-6);
+}
+.pk-contact-col { display: flex; flex-direction: column; gap: var(--space-6); }
+.pk-sets { display: flex; flex-direction: column; gap: 2px; }
+.pk-sets .gy-eyebrow { margin-bottom: var(--space-2); }
+.pk-contact-col .gy-glitch { font-size: clamp(2rem, 5vw, 2.75rem); }
+.pk-contacts { display: flex; flex-direction: column; }
+.pk-avail { color: var(--accent); margin: var(--space-2) 0 0; }
+.pk-contact-foot {
+  display: flex; justify-content: space-between;
+  padding: var(--space-5) var(--page-margin) var(--page-margin);
+  border-top: 1px solid var(--border-hairline);
+  color: var(--text-muted); margin-top: auto;
+}
+
+/* ---------- Print: one page per sheet ---------- */
+@media print {
+  @page { size: A4; margin: 0; }
+  .pk-stage { padding: 0; gap: 0; background: var(--ink-void); }
+  .pk-page {
+    width: 210mm; min-height: 297mm; height: 297mm;
+    box-shadow: none; border: none; break-after: page;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+}

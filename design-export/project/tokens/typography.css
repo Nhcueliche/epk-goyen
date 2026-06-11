@@ -1,0 +1,48 @@
+/* ============================================================
+   GOYEN · Typography tokens
+   Display = Archivo Black (mayúsculas, titulares, wordmark)
+   Body    = Archivo (lectura — NUNCA párrafos largos en mayúsculas)
+   Mono    = Space Mono (rider, BPM, datos técnicos, contacto)
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-body:    'Archivo', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Space Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---- Display scale (headlines / glitch titles / wordmark) ---- */
+  --type-hero:     clamp(4rem, 14vw, 11rem);   /* GOYEN cover wordmark */
+  --type-display:  clamp(2.5rem, 7vw, 5rem);    /* section glitch titles */
+  --type-title:    clamp(1.75rem, 4vw, 2.75rem);
+  --type-subtitle: 1.375rem;
+
+  /* ---- Body scale ---- */
+  --type-lead:  1.25rem;    /* posicionamiento phrase, lead paragraph */
+  --type-body:  1rem;       /* default reading (min 10pt in print) */
+  --type-small: 0.875rem;
+  --type-micro: 0.75rem;
+
+  /* ---- Mono scale (technical) ---- */
+  --type-mono:       0.9375rem;
+  --type-mono-small: 0.8125rem;
+
+  /* ---- Weights ---- */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold:    700;
+  --weight-black:   800;
+
+  /* ---- Line heights ---- */
+  --leading-tight:  0.92;   /* display headlines */
+  --leading-snug:   1.15;
+  --leading-normal: 1.55;   /* body reading */
+  --leading-mono:   1.7;    /* rider / data rows */
+
+  /* ---- Letter spacing ---- */
+  --tracking-display: -0.01em;  /* tight on big grotesque */
+  --tracking-normal:  0;
+  --tracking-wide:    0.18em;    /* mono data line, eyebrow labels */
+  --tracking-wider:   0.32em;    /* the HARD TECHNO / BPM / CITY band */
+}

@@ -1,0 +1,20 @@
+<!-- @dsCard group="Spacing" viewport="700x180" name="Shadows & glow" subtitle="Depth goes down (black); emphasis goes up (electric glow)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 28px 24px; background: var(--ink-void); display: flex; gap: 26px; align-items: center; }
+  .item { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .box { width: 110px; height: 64px; background: var(--surface-raised); border-radius: var(--radius-sm); }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: .08em; }
+</style>
+</head>
+<body>
+  <div class="item"><div class="box" style="box-shadow: var(--shadow-card)"></div><span class="lab">shadow-card</span></div>
+  <div class="item"><div class="box" style="box-shadow: var(--shadow-pop)"></div><span class="lab">shadow-pop</span></div>
+  <div class="item"><div class="box" style="box-shadow: var(--shadow-accent-glow)"></div><span class="lab">accent-glow</span></div>
+  <div class="item"><div class="box" style="background: var(--blue-electric); box-shadow: var(--glow-electric)"></div><span class="lab">glow-electric</span></div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* ============================================================
+   GOYEN · Color tokens
+   Base oscura + azul eléctrico como única identidad cromática.
+   Regla: máximo UN elemento en azul eléctrico saturado por página.
+   Regla: NO usar rojo (salvo micro-acento de booking opcional).
+   ============================================================ */
+
+:root {
+  /* ---- Raw palette (the five brand colors) ---- */
+  --ink-void:        #010108;  /* fondo principal — negro azulado, NO negro puro */
+  --blue-deep:       #080557;  /* fondos de sección, overlays sobre fotos */
+  --blue-mid:        #0E0899;  /* elementos gráficos secundarios, líneas */
+  --blue-mid-bright: #100AB5;  /* marcos, bordes activos */
+  --blue-electric:   #170EFF;  /* ACENTO — una sola descarga por página */
+  --white:           #FAFAFA;  /* texto de lectura */
+
+  /* ---- Extended neutrals (derived from the void) ---- */
+  --ink-900: #04040f;
+  --ink-800: #07071c;
+  --ink-700: #0b0b2a;
+  --ink-600: #12123f;
+  --ink-500: #1c1c54;
+
+  /* ---- Electric blue variations ---- */
+  --blue-electric-bright: #4a43ff;  /* hover / lighter electric */
+  --blue-electric-dim:    #1109b0;  /* pressed / darker electric */
+  --blue-haze:            #aeb6ff;  /* photo highlight, faint glow text */
+
+  /* ---- Optional booking micro-accent (off by default) ---- */
+  --accent-booking: #ff2a2a;  /* USE ONCE max, never in titles/backgrounds */
+
+  /* ---- Glow / luminance ---- */
+  --glow-electric: 0 0 24px rgba(23, 14, 255, 0.55);
+  --glow-electric-soft: 0 0 40px rgba(23, 14, 255, 0.30);
+
+  /* ============================================================
+     SEMANTIC ALIASES — reach for these in components
+     ============================================================ */
+  --surface-base:     var(--ink-void);     /* page background */
+  --surface-section:  var(--blue-deep);     /* section blocks, overlays on photo */
+  --surface-raised:   var(--ink-700);       /* cards, input fields */
+  --surface-overlay:  rgba(1, 1, 8, 0.72);  /* scrim over photography */
+
+  --text-primary:   var(--white);
+  --text-muted:     rgba(250, 250, 250, 0.62);
+  --text-faint:     rgba(250, 250, 250, 0.34);
+  --text-on-accent: var(--white);
+
+  --accent:         var(--blue-electric);
+  --accent-hover:   var(--blue-electric-bright);
+  --accent-press:   var(--blue-electric-dim);
+  --link:           var(--blue-electric);
+
+  --border-hairline: rgba(250, 250, 250, 0.12);
+  --border-line:     var(--blue-mid);
+  --border-frame:    var(--blue-mid-bright);
+  --border-strong:   var(--blue-electric);
+
+  /* glitch RGB-split channels (blue-forward, not full RGB) */
+  --glitch-a: var(--blue-electric);
+  --glitch-b: #00e0ff;  /* cyan ghost — subtle second channel */
+}
