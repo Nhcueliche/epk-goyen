@@ -140,9 +140,13 @@ nombre del proyecto). Cada push a la rama principal redeploya solo.
   índice de los section labels y a estados hover/copied.
 - **Focus ring:** `--blue-electric-bright #4A43FF` en vez de `#170EFF` para cumplir 3:1 de
   contraste no-textual sobre los fondos ink.
+- **Duotono solo en el hero:** a pedido del artista (junio 2026), la grilla de Prensa muestra
+  las fotos en color natural; el duotono azul CSS quedó únicamente en la foto del hero (y en
+  el og-image). Para re-activarlo en la grilla: en `js/main.js` cambiar la clase
+  `photo-frame` por `gy-duotone` en `renderFotos`.
 - **Foto de cabina (`foto-02`):** la única versión disponible en el export ya venía con el
-  duotono horneado (`goyen-live.jpeg`). El tratamiento CSS (grayscale + multiply) la normaliza
-  igual que al resto, así que se ve consistente; cuando haya material original, reemplazarla.
+  duotono azul horneado en el JPEG (`goyen-live.jpeg`), así que se ve azul aunque la grilla
+  no aplique filtro; cuando haya material original sin editar, reemplazarla.
 - **`assets/presskit-goyen.pdf`:** es el **presskit 2025** que venía en el export, como
   placeholder funcional hasta que exista el PDF 2026.
 - **og-image:** única imagen con el duotono horneado (1200x630, generada con

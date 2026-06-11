@@ -206,7 +206,7 @@ function renderFotos(fotos, driveUrl) {
     btn.setAttribute('aria-label', `Ampliar foto: ${foto.alt || 'foto de prensa de GOYEN'}`);
 
     const frame = document.createElement('div');
-    frame.className = 'gy-duotone gy-frame';
+    frame.className = 'photo-frame gy-frame';
     const pic = document.createElement('picture');
     if (foto.srcset) {
       const source = document.createElement('source');

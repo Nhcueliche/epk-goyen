@@ -613,8 +613,14 @@ button { font: inherit; }
   aspect-ratio: 3 / 2;
   display: block; width: 100%;
 }
-.photo-cell .gy-duotone { width: 100%; height: 100%; }
-.photo-cell:hover img { filter: grayscale(1) contrast(1.05) brightness(1.65); }
+/* Grilla de prensa en color natural (pedido del artista) —
+   el duotono CSS queda solo en el hero. */
+.photo-frame {
+  position: relative; background: var(--ink-900); overflow: hidden;
+  width: 100%; height: 100%;
+}
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.photo-cell:hover img { filter: brightness(1.08); }
 .photos-pack { align-self: flex-start; }
 
 /* Lightbox */

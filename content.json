@@ -33,6 +33,12 @@
       "srcset": "assets/img/foto-02-480.webp 480w, assets/img/foto-02-960.webp 960w",
       "fallback": "assets/img/foto-02-960.jpg",
       "alt": "GOYEN en cabina durante un set en vivo"
+    },
+    {
+      "src": "assets/img/foto-03-1600.webp",
+      "srcset": "assets/img/foto-03-480.webp 480w, assets/img/foto-03-960.webp 960w, assets/img/foto-03-1600.webp 1600w",
+      "fallback": "assets/img/foto-03-960.jpg",
+      "alt": "GOYEN sentado en una plaza de hormigón con plataformas hexagonales"
     }
   ],
   "drive_fotos_url": "https://drive.google.com/drive/folders/1_kZMFqOweay312NqDi4oThg5vFpqMwFE?usp=drive_link",

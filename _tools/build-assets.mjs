@@ -26,7 +26,8 @@ const WHITE = '#FAFAFA';
 const ELECTRIC_HEX = '#170EFF';
 
 const portrait = path.join(SRC, 'uploads', 'IMG_2052.jpeg');       // master del retrato
-const live = path.join(SRC, 'assets', 'photos', 'goyen-live.jpeg'); // foto cabina
+const live = path.join(SRC, 'assets', 'photos', 'goyen-live.jpeg'); // foto cabina (azul horneado en origen)
+const plaza = path.join(SRC, 'uploads', 'IMG_2080.jpeg');           // retrato exterior, plaza de hormigón
 
 const fontBuf = fs.readFileSync(path.join(here, 'ArchivoBlack-Regular.ttf'));
 const font = opentype.parse(fontBuf.buffer.slice(fontBuf.byteOffset, fontBuf.byteOffset + fontBuf.byteLength));
@@ -79,6 +80,7 @@ async function main() {
   await photoSet(portrait, 'goyen-hero', [800, 1280, 2000], 1280);
   await photoSet(portrait, 'foto-01', [480, 960, 1600], 960);
   await photoSet(live, 'foto-02', [480, 960, 1600], 960, { normalize: true });
+  await photoSet(plaza, 'foto-03', [480, 960, 1600], 960);
 
   // --- Wordmark PNG transparente (blanco y azul) ---
   for (const [name, fill] of [['goyen-wordmark-white', WHITE], ['goyen-wordmark-blue', ELECTRIC_HEX]]) {
