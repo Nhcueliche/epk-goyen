@@ -36,6 +36,12 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-mono-400.woff2" crossorigin>
 
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Preconexión a los hosts de los reproductores embebidos: la conexión
+       (DNS + TLS) ya queda lista antes de que se carguen los iframes. -->
+  <link rel="preconnect" href="https://w.soundcloud.com">
+  <link rel="preconnect" href="https://www.youtube-nocookie.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>

@@ -39,6 +39,7 @@ async function init() {
   renderContacto(data.contacto || {});
   hideOrphanNavLinks();
   renumberSections();
+  preloadEmbeds();
 }
 
 // Los índices de los eyebrows quedan correlativos aunque haya secciones ocultas
@@ -107,11 +108,11 @@ function buildEmbed(set) {
   let make = null;
   if (platform === 'soundcloud') {
     holder.style.height = '166px';
-    make = () => {
+    make = (eager) => {
       const f = document.createElement('iframe');
       f.height = '166';
       f.title = `SoundCloud: ${set.titulo || 'set de GOYEN'}`;
-      f.loading = 'lazy';
+      f.loading = eager ? 'eager' : 'lazy';
       f.allow = 'autoplay';
       f.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(set.url) +
         '&color=%23170eff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_teaser=false';
@@ -121,10 +122,10 @@ function buildEmbed(set) {
     const id = youtubeId(set.url);
     if (id) {
       holder.classList.add('set-embed--video');
-      make = () => {
+      make = (eager) => {
         const f = document.createElement('iframe');
         f.title = `YouTube: ${set.titulo || 'set de GOYEN'}`;
-        f.loading = 'lazy';
+        f.loading = eager ? 'eager' : 'lazy';
         f.allow = 'accelerometer; encrypted-media; picture-in-picture; web-share';
         f.allowFullscreen = true;
         f.src = `https://www.youtube-nocookie.com/embed/${id}`;
@@ -135,15 +136,35 @@ function buildEmbed(set) {
 
   if (!make) return null; // plataforma sin embed: queda solo el link directo
 
-  // Lazy-load real: el iframe se inyecta recién cerca del viewport
+  // eager => fuerza la descarga aunque el iframe esté fuera de pantalla.
+  const load = (eager) => {
+    if (holder.dataset.loaded === 'true') return;
+    holder.appendChild(make(eager));
+    holder.dataset.loaded = 'true';
+  };
+
+  // Lazy-load real: el iframe se inyecta cerca del viewport...
   const io = new IntersectionObserver((entries) => {
-    if (entries.some((e) => e.isIntersecting)) {
-      holder.appendChild(make());
-      io.disconnect();
-    }
+    if (entries.some((e) => e.isIntersecting)) { load(false); io.disconnect(); }
   }, { rootMargin: '400px 0px' });
   io.observe(holder);
+
+  // ...y además se expone un cargador para precargarlo en segundo plano
+  // (ver preloadEmbeds), liberando el observer al hacerlo.
+  holder._loadEmbed = (eager) => { load(eager); io.disconnect(); };
   return holder;
+}
+
+/* Precarga todos los embeds en segundo plano apenas el navegador queda libre
+   tras el primer render. Así, cuando el usuario baja a Música, los players ya
+   están cargados y se ven correctamente, en vez de empezar a bajar al aparecer.
+   Se difiere a requestIdleCallback para no competir con la carga inicial. */
+function preloadEmbeds() {
+  const run = () => document.querySelectorAll('.set-embed').forEach((h) => {
+    if (typeof h._loadEmbed === 'function') h._loadEmbed(true);
+  });
+  if ('requestIdleCallback' in window) requestIdleCallback(run, { timeout: 3000 });
+  else setTimeout(run, 1200);
 }
 
 function platformLabel(p) {
