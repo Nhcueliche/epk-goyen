@@ -18,6 +18,30 @@ window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
 /* ---------------------------------------------------------- */
+/* Nav mobile: menú hamburguesa desplegable                    */
+/* ---------------------------------------------------------- */
+const navToggle = $('#nav-toggle');
+const navLinks = $('#nav-links');
+if (navToggle && navLinks) {
+  const closeMenu = () => {
+    nav.classList.remove('menu-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Abrir menú');
+  };
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  navLinks.addEventListener('click', (e) => { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('menu-open') && !nav.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  window.matchMedia('(min-width: 900px)').addEventListener('change', (e) => { if (e.matches) closeMenu(); });
+}
+
+/* ---------------------------------------------------------- */
 /* Render                                                      */
 /* ---------------------------------------------------------- */
 async function init() {
