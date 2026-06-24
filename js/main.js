@@ -61,12 +61,11 @@ function dataBand(identidad) {
 
 function renderIdentidad(identidad) {
   const band = dataBand(identidad);
-  if (band) {
-    $('#hero-band').textContent = band;
-    $('#footer-band').textContent = band;
-  } else {
-    $('#hero-band').hidden = true;
-  }
+  // El hero muestra solo los géneros; la banda completa (con ciudad) queda en el footer.
+  const heroBand = missing(identidad.generos) ? band : identidad.generos.toUpperCase();
+  if (heroBand) $('#hero-band').textContent = heroBand;
+  else $('#hero-band').hidden = true;
+  if (band) $('#footer-band').textContent = band;
   const tagline = $('#hero-tagline');
   if (missing(identidad.tagline)) tagline.hidden = true;
   else tagline.textContent = identidad.tagline;

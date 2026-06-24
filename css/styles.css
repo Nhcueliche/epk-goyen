@@ -557,8 +557,8 @@ button { font: inherit; }
   padding: 0 var(--container-pad) var(--space-9);
   display: flex; flex-direction: column; gap: var(--space-4);
 }
-.hero-band { color: var(--blue-haze); }
-.hero .gy-glitch { font-size: var(--type-hero); }
+.hero-band { color: var(--blue-haze); font-size: var(--type-micro); }
+.hero .gy-glitch { font-size: clamp(3.5rem, 15vw, 8.5rem); }
 .hero-tagline {
   font-size: var(--type-lead);
   line-height: 1.4;
@@ -567,6 +567,33 @@ button { font: inherit; }
   text-wrap: pretty;
 }
 .hero-cta { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-3); }
+
+/* Mobile: el bloque del hero ocupa la mitad inferior (cara arriba), elementos
+   jerarquizados por importancia. Texto agrupado arriba, botones anclados abajo. */
+@media (max-width: 719px) {
+  .hero-content {
+    min-height: 50svh;
+    justify-content: flex-end;
+    padding-bottom: var(--space-5);
+    gap: var(--space-3);
+  }
+  /* 1 · nombre — el más importante */
+  .hero .gy-glitch { font-size: clamp(3.25rem, 17vw, 5rem); }
+  /* 3 · tagline — medio */
+  .hero-tagline { font-size: 1.0625rem; max-width: 30ch; }
+  /* 5 · banda de géneros — el menos importante; espacio chico e igual arriba y abajo */
+  .hero-band { font-size: var(--type-micro); margin-block: calc(var(--space-2) - var(--space-3)); }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+  .hero-cta .gy-btn { width: 100%; }
+  /* 2 · Booking (CTA primario) — prominente */
+  .hero-cta .gy-btn--lg { font-size: var(--type-body); min-height: 50px; padding: 13px 22px; }
+  /* 4 · Escuchar sets (CTA secundario) — un punto menos */
+  .hero-cta .gy-btn--secondary { font-size: var(--type-small); min-height: 46px; }
+}
 
 /* Secciones */
 .section {
